@@ -1,0 +1,104 @@
+\documentclass[letterpaper,11pt]{report}
+\usepackage{float,captdef,multicol}
+\usepackage{amssymb,amsmath,amsfonts,fancybox}
+%\usepackage[activeacute,spanish,es-tabla]{babel}
+\usepackage[spanish]{babel} % English formatting
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{marginnote}
+\usepackage{tensor,physics}
+\usepackage{xcolor}
+\usepackage{biblatex}
+\addbibresource{sample.bib}
+\hypersetup{colorlinks=true, linkcolor=purple}
+%\addbibresource{sample.bib}
+
+\renewcommand*{\marginnotevadjust}{-0.1cm}
+\renewcommand*{\marginfont}{\footnotesize}
+\usepackage[right=4.5cm,left=2cm,top=3cm,bottom=3.0cm]{geometry}
+
+%\usepackage[notref]{showkeys} % muestra los labels de las referencias.
+
+\spanishdecimal{.}
+
+
+\begin{document}
+
+\sffamily
+
+\thispagestyle{empty}
+\begin{center}
+
+\
+
+\vspace{6.5cm}
+
+\rule{15cm}{0.1cm}
+
+\vspace{1.5cm}
+
+{\huge \textsc{\textbf{Notes on String Theory}}}
+
+\vspace{1.5cm}
+
+\rule{15cm}{0.1cm}
+
+\vspace{1.5cm}
+
+Versi'on del \today
+
+\end{center}
+
+
+\newpage
+\thispagestyle{empty}
+\ \\
+\newpage
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\pagestyle{plain}
+\chapter*{Prefacio}
+\addcontentsline{toc}{chapter}{Prefacio}
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+Estas notas han sido escritas por \href{https://github.com/10blackhole/}{ Borja Diez B.} y están lejos de ser un material académico. Las he escrito para estudiar conceptos de física que me parecen interesante. Aún así, comparto el documento para quien le interese. 
+
+La mayor parte de estas notas han sido sacas de \cite{2009fcst.book.....Z}.
+
+
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+
+
+
+
+\bigskip
+\bigskip
+\bigskip
+
+\bigskip
+\bigskip
+\bigskip
+
+
+\tableofcontents
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{cap/una breve introduccion}
+
+\newpage
+\printbibliography
+\end{document}
