@@ -119,7 +119,7 @@ Otras propiedad a notar son
 Las transformaciones de Lorentz son las relaciones entre coordenadas en dos sistemas de referencia inerciales diferentes. Consideremos un marco de referencia $S$ y otro $S'$, que se está moviendo a lo largo del eje $x$ positivo del marco $S$ con velocidad $v$.
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.1]{cap/img/Lorentz.jpeg}
+    \includegraphics[scale=0.1]{img/Lorentz.jpeg}
     \caption{Dos sistemas de referencia conectados por un boost.}
     \label{fig:2.1}
 \end{figure}
@@ -135,6 +135,142 @@ donde el factor de Lorentz $\gamma$ está dado por
 \begin{equation}
     \gamma =\frac{1}{\sqrt{1-\beta^2}}=\frac{1}{\sqrt{1-v^2/c^2}}
 \end{equation}
+Usando índices, esto queda
+\begin{equation}\label{2.36}
+\begin{split}
+    x'^0&=\gamma(x^0-\beta x^1)\\
+    x'^1&=\gamma(x^1-\beta x^0)\\
+    x'^2&=x^2\\
+    x'^3&=x^3
+\end{split}
+\end{equation}
+Notemos que las coordenadas ortogonales a la dirección del boost permaneces invariantes. Las transformaciones de Lorentz inversas nos entregan los valores de las coordenadas $x$ en términos de las coordenadas $x'$. El resultado es el mismo conjunto de transformaciones con $x$ y $x'$ intercambiados y con $\beta$ reemplazado por $(-\beta)$.
+
+Notemos que estas transformaciones satisfacen
+\begin{equation}\label{2.37}
+    (x^0)^2-(x^1)^2-(x^2)^2-(x^3)^2=(x'^0)^2-(x'^1)^2-(x'^2)^2-(x'^3)^2
+\end{equation}
+Por definición, \textcolor{purple}{\textit{las transformaciones de Lorentz son las transformaciones de coordenadas lineales e invertibles que respetan (\ref{2.37})}}.
+
+En geenral, escribimos las transformaciones de Lorentz como la combinación lineal
+\begin{equation}
+    x'^\mu=\tensor{L}{^\mu_\nu}x^\nu
+\end{equation}
+donde las entradas $\tensor{L}{^\mu_\nu}$ son constantes que defines la transformación lineal. Para los boost en (\ref{2.36}), tenemos
+\begin{equation}
+    [L]=\tensor{L}{^\mu_\nu}=\mqty(\gamma&-\gamma\beta&0&0\\-\gamma\beta&\gamma&0&0\\0&0&1&0\\0&0&0&1)
+\end{equation}
+Además lo coeficientes $\tensor{L}{^\mu_\nu}$ están constreñidos por (\ref{2.37}) y deben satisfacer
+\begin{equation}
+    \tensor{L}{^\mu_\alpha}\eta_{\mu\nu}\tensor{L}{^\nu_\beta}=\eta_{\alpha\beta}
+\end{equation}
+En forma matricial, esta ecuación se puede escribir como
+\begin{equation}
+    L^T\eta L=\eta
+\end{equation}
+Una propiedad importante de las transformaciones de Lorentz puede ser deducida al tomar el determinante a ambos lados de la ecuación anterior, utilizando el hecho de que el determinante de un producto es el producto de los determinantes,
+\begin{equation}
+    \det L=\pm 1
+\end{equation}
+
+El conjunto de transformaciones de Lorentz incluye los boosts a lo largo de cada coordenadas espacial y las rotaciones de las coordenadas espaciales.
+
+Cualquier conjunto de cuatro cantidades que transforma bajo transformaciones de Lorentz de la misma manera que los $x^\mu$ se dice que es un 4-vector, o un vector de Lorentz.
+
+Un 4-vector $a^\mu$ se dice que es tipo-tiempo si $a^2=a\cdot a<0$, tipo-espacio si $a^2>0$, y nulo si $a^2=0$. 
+
+\section{Coordenadas del cono de luz}
+Ahora discutiremos un sistema de coordenadas extremadamente útil al momento de estudiar la teoría de cuerdas, el sistema de coordenadas del cono de luz. La cuantización de la cuerda relativista puede ser realizado directamente usando estas coordenadas.
+
+Definimos las dos coordenadas del cono de luz $x^+$ y $x^-$ como dos combinaciones lineales independientes de la coordenadas temporal y una coordenada espacial, digamos $x^1$. Esto se escribe como
+\begin{equation}\label{2.48}
+\boxed{\begin{split}
+    x^+&\equiv\frac{1}{\sqrt{2}}(x^0+x^1)\\
+    x^-&\equiv\frac{1}{\sqrt{2}}(x^0-x^1)
+\end{split}}
+\end{equation}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.15]{img/light-cone coord.jpg}
+    %\caption{Caption}
+    %\label{fig:enter-label}
+\end{figure}
+En estas coordenadas, $(x^0,x^1)$ son tratadas como $(x^+,x^-)$, pero las otras dos coordenadas $x^2,x^3$ se mantienen. Así, el conjunto completo de coordenadas de cono de luz es $(x^+,x^-,x^2,x^3)$.
+
+Las nuevas coordenadas $x^+$ y $x^-$ son llamadas coordenada de cono de luz porque los ejes coordenados asociados son las lineas de mundo de haces de luz emitidos desde el origen a lo largo del eje $x^1$. Para un hza de luz moviéndose en la dirección $x^1$ positiva, tenemos $x^1=ct=x^0$, luego $x^-=0$. La línea $x^-=0$ es, por definición, el eje $x^+$. Para un haz de lux moviéndose en la dirección $x^1$ negativa, tenemos $x^1=-ct=-x^0$, luego $x^+=0$. Esto corresponde al eje $x^-$, Los ejes $x^{\pm}$ son lineas a $45\degree$ con respecto a los ejes $x^0$ y $x^1$.
+
+\begin{pregunta}
+    ¿Podemos pensar a $x^+$, o quizás a $x^-$, como una nueva coordenada temporal?
+\end{pregunta}
+Yes. De hecho, ambas tienen el mismo derecho de ser llamadas coordenada temporal, a pesar de que ninguna lo es, en el sentido estándar de la palabra. Tiempo del cono de luz ya no es más el tiempo ordinario. Quizás la propiedad más familiar del tiempo es que este siempre avanza para cualquier movimiento físico de una partícula. Para todas esas curvas, tanto $x^+$ como $x^-$ incrementan a medida seguimos las flechas. La única sutileza es que, para rayos de luz especiales, el cono de luz se congelará. Como vimos, $x^+$ permanece constante para un rayo de luz en la dirección negativa de $x^1$, mientras que $x^-$ permanece constante para un rayo de luz en la dirección positiva de $x^+$.
+
+Por definición, tomaremos $x^+$ como la \textit{coordenada temporal del cono de luz}. Luego, pensaremos a $x^-$ como la coordenada espacial. Por supuesto, estas coordenadas temporal y espacial del cono de luz serán algo extrañas. 
+
+Tomando diferenciales de (\ref{2.48}),
+\begin{equation}
+    2dx^+dx^+=(dx^0+dx^1)(dx^0-dx^1)=(dx^0)^2-(dx^1)^2.
+\end{equation}
+Se sigue que el intervalo invariante, expresado en términos de estas coordenadas queda
+\begin{equation}\label{2.50}
+    \boxed{-ds^2=-2dx^+dx^-+(dx^2)^2+(dx^3)^2}
+\end{equation}
+La simetría en las definiciones de $x^+$ y $x^-$ es evidente. Notemos que, dado $ds^2$, resolviendo para $dx^-$ o para $dx^+$ no requiere que tomemos la raíz cuadrada. Esta es una característica muy importante de estas coordenadas como veremos más adelante.
+
+\begin{pregunta}
+    ¿Cómo podemos representar (\ref{2.50}) en notación de índices?
+\end{pregunta}
+Aún necesitaremos índices que corran por 4 valores, pero esta vez estos serán denotados por
+\begin{equation}
+    +,-,2,3
+\end{equation}
+Introducimos la métrica del cono de luz $\hat{\eta}$, la cual como la métrica de Minkowski, es definida simétrica bajo intercambio de sus índices. Expandiendo esta ecuación y comparando con (\ref{2.50}), encontramos
+\begin{equation}
+    \hat{\eta}_{+-}=\hat{\eta}_{-+}=-1,\qquad \hat{\eta}_{++}=\hat{\eta}_{--}=0
+\end{equation}
+
+En el subespacio de $(+,-)$, los elementos diagonales de la métrica del cono de luz se anulan, pero los de afuera de la diagonal no. Además encontramos que $\hat{\eta}$ no acopla el subespacio $(+,-)$ con el subespacio $(2,3)$:
+\begin{equation}
+    \hat{\eta}_{+I}=\hat{\eta}_{-I},\qquad I=2,3
+\end{equation}
+La representación matricial de la métrica del cono de luz es
+\begin{equation}
+    \hat{\eta}_{\mu\nu}=\mqty(0&-1&0&0\\-1&0&0&0\\0&0&1&0\\0&0&0&1)
+\end{equation}
+
+Las componentes del cono de luz de cualquier 4-vector son definidas análogamente a (\ref{2.48}):
+\begin{equation}\label{2.56}
+\begin{split}
+    a^+\equiv\frac{1}{\sqrt{2}}(a^0+a^1)\\
+    a^-\equiv\frac{1}{\sqrt{2}}(a^0-a^1)
+\end{split}
+\end{equation}
+El producto escalar entre dos vectores, puede ser escrito usando las componentes del cono de luz,
+\begin{equation}
+    \boxed{a\cdot b=-a^-b^+-a^+b^-+a^2b^2+a^3b^2=\hat{\eta}_{\mu\nu}a^\mu b^\nu}
+\end{equation}
+
+
+
+\subsection{Energía y momentum relativista}
+En relatividad especial hay una relación básica entre las masa en reposo $m$ de una partícula puntual relativista, su energía $E$, y su momentum relativista $\vb*{p}$, dada por
+\begin{equation}
+    \frac{E^2}{c^2}-\vb*{p}\cdot\vb*{p}=m^2c^2
+\end{equation}
+La energía y el momentum relativista están dados en términos de la masa en reposo y la velocidad por las siguientes relaciones familiares:
+\begin{equation}
+    E=\gamma mc^2,\qquad \vb*{p}=\gamma m\vb*{v}
+\end{equation}
+Así, podemos definir el 4-momentum como
+\begin{equation}
+    p^\mu=(p^0,p^1,p^2,p^3)\equiv\left(\frac{E}{c},p_x,p_y,p_z\right)
+\end{equation}
+Usando las últimas dos ecuaciones, tenemos
+\begin{equation}
+    p^\mu=\left(\frac{E}{c},\vb*{p}\right)=m\gamma(x,\vb*{v})
+\end{equation}
+
+
 
 
 

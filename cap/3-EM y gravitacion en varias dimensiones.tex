@@ -1,0 +1,32 @@
+\chapter{Electromagnetismo y gravitación en varias dimensiones}
+Revisaremos la formulación relativista de la electrodinámica en 4-dimensiones y mostraremos cómo esta facilita la definición de la electrodinámica en otras dimensiones.
+
+\section{Electrodinámica Clásica}
+Al contrario de la mecánica Newtoniana, la electrodinámica clásica es una teoría relativista. Esta formulación permite una extensión natural de la teoría a dimensiones más altas. Pero antes de discutir la formulación relativista revisaremos las ecuaciones de Maxwell. Estas ecuaciones describen la dinámica del los campos eléctrico y magnético.
+
+Usaremos el sistema de unidades de Heaviside-Lorentz dado que es más conveniente para discuciones que involucran relatividad y dimensiones extra. En este sistema de unidades, las ecuaciones de Maxwell toman la siguiente forma:
+\begin{align}
+    \label{3.1}\nabla\times\vb*{E}&=-\frac{1}{c}\pdv{\vb*{B}}{t}\\
+    \label{3.2}\nabla\cdot\vb*{B}&=0\\
+    \label{3.3}\nabla\cdot\vb*{E}&=\rho\\
+    \label{3.4}\nabla\times\vb*{B}&=\frac{1}{c}\vb*{j}+\frac{1}{c}\pdv{\vb*{E}}{t}
+\end{align}
+Estas ecuaciones implican que $\vb*{E}$ y $\vb*{B}$ son medidos con las \textit{mismas} unidades. Las primeras dos ecuaciones son las ecuaciones de Maxwell libres de fuente. La otras dos involucran fuentes: la densidad de carga $\rho$, y la densidad de corriente $\vb*{j}$. La ley de la fuerza de Lorentz, la cual entrega la razón de cambio del momentum relativista de una partícula cargada en un campo electromagnético, toma la forma
+\begin{equation}
+    \dv{\vb*{p}}{t}=q\left(\vb*{E}+\frac{\vb*{v}}{c}\times\vb*{B}\right).
+\end{equation}
+Dado que el campo magnético $\vb*{B}$ tiene divergencia nula, este puede ser escrito como el rotor de un vector, el potencial vectorial $\vb*{A}$:
+\begin{equation}\label{3.6}
+    \vb*{B}=\nabla\times \vb*{A}
+\end{equation}
+En electrostática, el campo eléctrico $\vb*{E}$ no tiene rotor, luego, se puede escribir como (menos) el gradiente de un potencial escalar, $\Phi$. En electrodinámica, tal como (\ref{3.1}) indica, el rotor de $\vb*{E}$ no siempre es cero. Sustituyendo (\ref{3.6}) en (\ref{3.1}), encontramos una combinación lineal de $\vb*{E}$ y la derivada temporal de $vb*{A}$, el cual tiene rotor igual a cero:
+\begin{equation}
+    \nabla\times\left(\vb*{E}+\frac{1}{c}\pdv{\vb*{A}}{t}\right)=0
+\end{equation}
+El objeto dentro del paréntesis se iguala a $-\nabla\Phi$, y el campo eléctrico $\vb*{E}$ puede ser escrito en términos del potencial escalar y el potencial vectorial:
+\begin{equation}\label{3.8}
+    \vb*{E}=-\frac{1}{c}\pdv{\vb*{A}}{t}-\nabla\Phi
+\end{equation}
+Las ecuaciones (\ref{3.6}) y (\ref{3.8}) expresan los campos eléctrico y magnético en términos de potenciales. Haciendo esto, las ecuaciones de Maxwell libres de fuente (\ref{3.1}) y (\ref{3.2}) se satisfacen automáticamente. Las ecuaciones (\ref{3.3}) y (\ref{3.4}) contienen información adicional. Ellas son usadas para derivar ecuaciones para $\vb*{A}$ y $\Phi$.
+
+\subsection{Electromagnetismo en tres dimensiones}
