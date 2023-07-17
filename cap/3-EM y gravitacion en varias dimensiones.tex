@@ -12,14 +12,14 @@ Usaremos el sistema de unidades de Heaviside-Lorentz dado que es más convenient
     \label{3.4}\nabla\times\vb*{B}&=\frac{1}{c}\vb*{j}+\frac{1}{c}\pdv{\vb*{E}}{t}
 \end{align}
 Estas ecuaciones implican que $\vb*{E}$ y $\vb*{B}$ son medidos con las \textit{mismas} unidades. Las primeras dos ecuaciones son las ecuaciones de Maxwell libres de fuente. La otras dos involucran fuentes: la densidad de carga $\rho$, y la densidad de corriente $\vb*{j}$. La ley de la fuerza de Lorentz, la cual entrega la razón de cambio del momentum relativista de una partícula cargada en un campo electromagnético, toma la forma
-\begin{equation}
+\begin{equation}\label{3.5}
     \dv{\vb*{p}}{t}=q\left(\vb*{E}+\frac{\vb*{v}}{c}\times\vb*{B}\right).
 \end{equation}
 Dado que el campo magnético $\vb*{B}$ tiene divergencia nula, este puede ser escrito como el rotor de un vector, el potencial vectorial $\vb*{A}$:
 \begin{equation}\label{3.6}
     \vb*{B}=\nabla\times \vb*{A}
 \end{equation}
-En electrostática, el campo eléctrico $\vb*{E}$ no tiene rotor, luego, se puede escribir como (menos) el gradiente de un potencial escalar, $\Phi$. En electrodinámica, tal como (\ref{3.1}) indica, el rotor de $\vb*{E}$ no siempre es cero. Sustituyendo (\ref{3.6}) en (\ref{3.1}), encontramos una combinación lineal de $\vb*{E}$ y la derivada temporal de $vb*{A}$, el cual tiene rotor igual a cero:
+En electrostática, el campo eléctrico $\vb*{E}$ no tiene rotor, luego, se puede escribir como (menos) el gradiente de un potencial escalar, $\Phi$. En electrodinámica, tal como (\ref{3.1}) indica, el rotor de $\vb*{E}$ no siempre es cero. Sustituyendo (\ref{3.6}) en (\ref{3.1}), encontramos una combinación lineal de $\vb*{E}$ y la derivada temporal de $\vb*{A}$, el cual tiene rotor igual a cero:
 \begin{equation}
     \nabla\times\left(\vb*{E}+\frac{1}{c}\pdv{\vb*{A}}{t}\right)=0
 \end{equation}
@@ -30,3 +30,101 @@ El objeto dentro del paréntesis se iguala a $-\nabla\Phi$, y el campo eléctric
 Las ecuaciones (\ref{3.6}) y (\ref{3.8}) expresan los campos eléctrico y magnético en términos de potenciales. Haciendo esto, las ecuaciones de Maxwell libres de fuente (\ref{3.1}) y (\ref{3.2}) se satisfacen automáticamente. Las ecuaciones (\ref{3.3}) y (\ref{3.4}) contienen información adicional. Ellas son usadas para derivar ecuaciones para $\vb*{A}$ y $\Phi$.
 
 \subsection{Electromagnetismo en tres dimensiones}
+¿Qué es el electromagnetismo en tres dimensiones? Una manera de producir una teoría del electromagnetismo en tres dimensiones es comenzar con una teoría en cuatro dimensiones y eliminar una coordenada espacial. Este proceso es llamado \textbf{reducción dimensional}.
+
+En cuatro dimensiones, tanto al campo eléctrico como el magnético tienen tres componentes espaciales: $(E_x,E_y,E_z)$ y $(B_x,B_y,B_z)$ respectivamente. Pareciera que una reducción a un mundo sin una coordenada $z$ requeriría eliminar las componentes $z$ de ambos campos, pero sorprendentemente esto no funciona. Las ecuaciones de Maxwell y la ley de fuerza de Lorentz lo hacen imposible.
+
+Con el fin de construir una teoría consistente en tres dimensiones, debemos asegurar que la dinámica no dependa de la dirección $z$ (la dirección que queremos eliminar). Si hay movimiento, este debe permanecer restringido al plano $(x,y)$. Es por esto que es natural pedir que \textit{ninguna cantidad dependa de $z$}. Esto no significa necesariamente eliminar cantidades con el índice $z$.
+
+La fuerza de Lorentz (\ref{3.5}) es una guía útil para la construcción de una teoría de menor dimensión. Supongamos que no hay campo magnético. Para mantener la componente $z$ del momentum igual a cero se debe cumplir que $E_z=0$. En el caso de campo magnético es más sorprendente. Asumamos que el campo eléctrico es cero. Si la velocidad de la partícula es un vector en el plano $(x,y)$, una componente del campo magnético debería generar, vía producto cruz, una fuerza en la dirección $z$. Por otro lado, una componente $z$ de campo magnético debería generar una fuerza en el plano $(x,y)$. Concluimos entonces que $B_x=B_y=0$, mientras mantenemos $B_z$. Juntando todo, tenemos
+\begin{equation}
+    E_z=B_x=B_y=0
+\end{equation}
+Las componentes de los campos restantes sólo pueden depender de $x$ e $y$. En el mundo 3-dimensional con coordenadas $t,x$ e $y$. el índice $z$ de $B_z$ nos es un índice vectorial. Luego, en este mundo reducido, $B_z$ se comporta como un escalar de Lorentz (más precisamente, es un objeto llamada pseudo-escalar). En resumen, tenemos un vector 2-dimensional $\vb*{E}$ y un campo escalar $B_z$.
+
+Podemos hacer un checkeo de consistencia mirando las componentes $x$ e $y$ de (\ref{3.1}):
+\begin{align}
+    \pdv{E_z}{y}-\pdv{E_y}{z}&=-\frac{1}{c}\pdv{B_x}{t}\\
+    \pdv{E_x}{z}-\pdv{E_z}{x}&=-\frac{1}{c}\pdv{B_y}{t}
+\end{align}
+Dado que el lado derecho son ceros (bajos nuestra suposición), el lado izquierdo también será cero. De hecho los son, ya que o contienen $E_z$ o una derivada en $z$. 
+
+Mientras que construir una electrodinámica 3-dimensional no fue difícil, los es mucho más adivinar qué forma tendrá una electrodinámica en 5-dimensiones. Como veremos a continuación, la formulación de las ecuaciones de Maxwell relativista nos entregan inmediatamente la generalización apropiada a otras dimensiones.
+
+\subsection{Manifestación de la electrodinámica relativista}
+En la formulación relativista de las ecuaciones de Maxwell ni el campo eléctrico ni el magnético forman parte de un 4-vector. Mas bien, un 4-vector es obtenido al cominar el potencial escalar $\Phi$ con el potencial vectorial $\vb*{A}$:
+\begin{equation}\label{3.11}
+    A^\mu=(\Phi,A^1,A^2,A^3)
+\end{equation}
+El correspondiente objeto con índices abajo es
+\begin{equation}\label{3.12}
+    A_\mu=(-\Phi,A^1,A^2,A^3)
+\end{equation}
+De $A_\mu$ podemos crear un objeto conocido como el \textbf{campo de intensidad electromagnética} $F_{\mu\nu}$:
+\begin{equation}\label{3.13}
+    \boxed{F_{\mu\nu}\equiv \partial_\mu A_\nu-\partial_\nu A_\mu}
+\end{equation}
+Notemos que $F_{\mu\nu}$ es antisimétrico
+\begin{equation}\label{3.14}
+    F_{\mu\nu}=-F_{\nu\mu}
+\end{equation}
+Se sigue de esta propiedad que todos los componentes de la diagonal de $F_{\mu\nu}$ son cero:
+\begin{equation}\label{3.15}
+    F_{00}=F_{11}=F_{22}=F_{33}=0
+\end{equation}
+Calculemos algunas entradas de $F_{\mu\nu}$. Denotaremos a $i$ como índice espacial, es decir, puede tomar los valores $1,2$ y $3$. Usando (\ref{3.13}) y (\ref{3.8}), encontramos
+\begin{equation}\label{3.16}
+    F_{0i}=\pdv{A_i}{x^0}-\pdv{A_0}{x^{i}}=\frac{1}{c}\pdv{A^{i}}{t}+\pdv{\Phi}{x^{i}}=-E_i
+\end{equation}
+De manera similar, calculemos $F_{12}$:
+\begin{equation}\label{3.17}
+    F_{12}=\partial _1A_2-\partial_2A_1=\partial_x A_y-\partial_yA_x=B_z
+\end{equation}
+dado que $\vb*{B}=\nabla\times\vb*{A}$. Continuando con este procedimiento, tenemos que
+\begin{equation}\label{3.18}
+    F_{\mu\nu}=\mqty(0&-E_x&-E_y&-E_z\\E_x&0&B_z&-B_y\\E_y&-B_z&0&B_x\\E_z&B_y&-B_x&0)
+\end{equation}
+Vemos que los campos $\vb*{E}$ y $\vb*{B}$ están codificados en $F_{\mu\nu}$. Los potenciales $A_\mu$ puedes ser cambiados por una \textit{transformación de gauge}. Una condición necesaria (pero no siempre suficiente) para la equivalencia física de los potenciales $A_\mu$ y $A'_\mu$ es que tienen que entregar campos eléctricos y magnéticos idénticos, o de manera equivalente, campos de intensidad idénticos. Las transofrmaciones de gauge toman la forma
+\begin{equation}
+    A_\mu\longrightarrow A'_\mu=A_\mu+\partial_\mu\epsilon
+\end{equation}
+donde $\epsilon(x)$ es una función arbitraria de las coordenadas del espacio-tiempo. El campo de fuerza $F_{\mu\nu}$ es \textit{invariante de gauge}. En efecto
+\begin{equation}\label{3.20}
+\begin{split}
+    F_{\mu\nu}\longrightarrow&\equiv \partial_\mu A'_\nu-\partial_\nu A'_\mu\\
+    &=\partial_\mu (A_\nu+\partial_\nu \epsilon)-\partial_\nu(A_\mu+\partial_\mu \epsilon)\\
+    &=F_{\mu\nu}+\partial_\mu\partial_\nu\epsilon-\partial_\nu\partial_\mu \epsilon\\
+    &=F_{\mu\nu}
+    \end{split}
+\end{equation}
+Podemos escribir la transformación de gauge de manera más explícita en forma de componentes. Usando (\ref{3.19}) y (\ref{3.12}), encontramos
+\begin{equation}\label{3.21}
+    \begin{split}
+        \Phi\longrightarrow \Phi'&=\Phi-\frac{1}{c}\pdv{\epsilon}{t}\\
+        \vb*{A}\longrightarrow \vb*{A}'&=\vb*{A}+\nabla\epsilon
+    \end{split}
+\end{equation}
+La transformación de gauge de $\vb*{A}$ es familiar; al añadirle un gradiente a un vector, su rotor no cambia, luego $\vb*{B}=\nabla\times\vb*{A}$ queda invariante. El potencial escalar $\Phi$ también cambia bajo una transformación de gauge. Esto es necesario para mantener $\vb*{E}$ invariante.
+\begin{tcolorbox}
+    Verificar que $\vb*{E}$ (\ref{3.8}), es invariante bajo transformaciones de gauge (\ref{3.21}).
+\end{tcolorbox}
+Recordemos que el uso de potenciales para representar $\vb*{E}$ y $\vb*{B}$ resuelve automáticamente las ecuaciones de Maxwell libres de fuente (\ref{3.1}) y (\ref{3.2}). ¿Cómo son estas ecuaciones escritas en términos de $F_{\mu\nu}$? Deben ser tales que se cumplan cuando (\ref{3.13}) se cumple. Consideremos la sigueinte combinación de campos de fuerza:
+\begin{equation}\label{3.22}
+    T_{\lambda\mu\nu}\equiv \partial_\lambda F_{\mu\nu}+\partial_\mu F_{\nu\lambda}+\partial_\nu F_{\lambda\mu}
+\end{equation}
+$T_{\lambda\mu\nu}$ se anula idénticamente si tenemos en cuenta (\ref{3.13}):
+\begin{tcolorbox}
+    Usando la conmutatividad de las derivadas parciales, probar la afirmación anterior.
+\end{tcolorbox}
+La anulación de $T_{\lambda\mu\nu}$,
+\begin{equation}
+    \boxed{\partial_\lambda F_{\mu\nu}+\partial_\mu F_{\nu\lambda}+\partial_\nu F_{\lambda\mu}=0}
+\end{equation}
+es un conjunto de ecuaciones diferenciales para el campo de fuerza. Estas ecuaciones son precisamente las ecuaciones de Maxwell libres de fuente. Para clarificar esto, primero notemos que $T_{\lambda\mu\nu}$ satisface las condiciones de antisimetría
+\begin{equation}\label{3.25}
+    T_{\lambda\mu\nu}=-T_{\mu\lambda\nu},\qquad T_{\lambda\mu\nu}=-T_{\lambda\nu\mu}
+\end{equation}
+Estas dos ecuaciones se siguen de (\ref{3.22}) y la propiedad de antisimetría del campo de fuerza. Esto nos dice que $T$ cambia de signo bajo el intercambio de dos índices adyacentes.
+\begin{tcolorbox}
+    Verificar (\ref{3.25}).21
+\end{tcolorbox}
